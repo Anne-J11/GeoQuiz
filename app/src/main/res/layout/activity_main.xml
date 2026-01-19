@@ -42,8 +42,7 @@
             android:id="@+id/btn_triche"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_triche">
-        </Button>
+            android:text="@string/btn_triche" />
     </LinearLayout>
 
     <LinearLayout

@@ -40,10 +40,10 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_aide"
+            android:id="@+id/btn_triche"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Triche"/>
+            android:text="@string/btn_triche" />
 
     </LinearLayout>
 
@@ -54,11 +54,14 @@
         android:text="@string/bouton_precedent"
         android:drawableStart="@drawable/fleche_gauche"
         android:drawablePadding="4dp" />
+
     <Button
         android:id="@+id/btn_suivant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:text="@string/bouton_suivant" />
+        android:text="@string/bouton_suivant"
+        android:drawableEnd="@drawable/fleche_droite"
+        android:drawablePadding="4dp" />
 
 </LinearLayout>

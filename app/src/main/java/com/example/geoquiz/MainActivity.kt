@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     // Utilisation de la délégation de propriété pour le ViewModel
     private val quizViewModel: QuizViewModel by viewModels()
 
+    // Enregistrement pour le résultat de l'activité Aide
     private val demarreTriche = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         // Écouteur pour le bouton Suivant
         binding.btnSuivant.setOnClickListener {
-            quizViewModel.questionSuivante() // Correction: appel sur l'instance
+            quizViewModel.questionSuivante()
             majQuestion()
         }
 
@@ -61,11 +62,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Écouteur pour le bouton Triche
-        binding.btnTriche?.setOnClickListener { // Correction: ID du bouton
+        binding.btnTriche.setOnClickListener {
             val reponseCorrecte = quizViewModel.repQuestionActuelle
             val intention = AideActivity.newIntent(this@MainActivity, reponseCorrecte)
             demarreTriche.launch(intention)
         }
+
         majQuestion()
     }
 

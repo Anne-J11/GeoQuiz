@@ -18,10 +18,10 @@ class QuizViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
         Question(R.string.question_antarctique, false)
     )
 
+    // Propriété pour suivre si l'utilisateur a triché
     var estTricheur: Boolean
         get() = savedStateHandle.get(EST_TRICHEUR_KEY) ?: false
         set(value) = savedStateHandle.set(EST_TRICHEUR_KEY, value)
-
 
     // Propriété calculée avec getter et setter
     var mIndexActuel: Int
