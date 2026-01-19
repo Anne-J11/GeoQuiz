@@ -28,5 +28,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_affiche_aide" />
+    <TextView
+        android:id="@+id/twNbTriches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/nb_triches" />
+
+    <Button
+        android:id="@+id/btn_retour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bouton_retour"
+        android:drawableStart="@drawable/fleche_gauche"
+        android:drawablePadding="4dp" />
 
 </LinearLayout>

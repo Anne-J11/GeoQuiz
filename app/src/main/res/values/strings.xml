@@ -6,6 +6,7 @@
     <string name="bouton_faux">Faux</string>
     <string name="bouton_suivant">Suivant</string>
     <string name="bouton_precedent">Précédent</string>
+    <string name="bouton_retour">Retour</string>
     <string name="btn_affiche_aide">Afficher réponse</string>
     <string name="btn_triche">Triche</string>
 
@@ -25,5 +26,7 @@
     <!-- AideActivity -->
     <string name="btn_affiche_aide_vrai">La bonne réponse est : Vrai</string>
     <string name="btn_affiche_aide_faux">La bonne réponse est : Faux</string>
+    <string name="nb_triches">Nombre de triches : %1$d / 3</string>
+
 
 </resources>

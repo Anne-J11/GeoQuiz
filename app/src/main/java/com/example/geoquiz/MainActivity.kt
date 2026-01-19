@@ -17,15 +17,26 @@ class MainActivity : AppCompatActivity() {
 
     // Utilisation de la délégation de propriété pour le ViewModel
     private val quizViewModel: QuizViewModel by viewModels()
+    private fun majBoutonTriche() {
+        binding.btnTriche.isEnabled = quizViewModel.tricheAutorisee
+    }
 
     // Enregistrement pour le résultat de l'activité Aide
     private val demarreTriche = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
-            quizViewModel.estTricheur =
-                result.data?.getBooleanExtra(EXTRA_REPONSE_AFFICHE, false) ?: false
+            val aTriche = result.data
+                ?.getBooleanExtra(EXTRA_REPONSE_AFFICHE, false)
+                ?: false
+
+            if (aTriche) {
+                quizViewModel.setQuestionActuelleTrichee()
+                majBoutonTriche()
+            }
+
         }
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +64,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnSuivant.setOnClickListener {
             quizViewModel.questionSuivante()
             majQuestion()
+            majBoutonTriche()
         }
+
 
         // Écouteur pour le bouton Précédent
         binding.btnPrecedent.setOnClickListener {
@@ -63,10 +76,14 @@ class MainActivity : AppCompatActivity() {
 
         // Écouteur pour le bouton Triche
         binding.btnTriche.setOnClickListener {
-            val reponseCorrecte = quizViewModel.repQuestionActuelle
-            val intention = AideActivity.newIntent(this@MainActivity, reponseCorrecte)
+            val intention = AideActivity.newIntent(
+                this,
+                quizViewModel.repQuestionActuelle,
+                quizViewModel.nbTriches
+            )
             demarreTriche.launch(intention)
         }
+
 
         majQuestion()
     }
@@ -109,10 +126,11 @@ class MainActivity : AppCompatActivity() {
      */
     private fun verifieReponse(repUser: Boolean) {
         val messageId = when {
-            quizViewModel.estTricheur -> R.string.toast_triche
+            quizViewModel.estTricheurSurQuestionActuelle -> R.string.toast_triche
             repUser == quizViewModel.repQuestionActuelle -> R.string.toast_correct
             else -> R.string.toast_incorrect
         }
+
         Toast.makeText(this, messageId, Toast.LENGTH_SHORT).show()
     }
 }
