@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">GeoQuiz</string>
+
+    <!-- Boutons -->
+    <string name="bouton_vrai">Vrai</string>
+    <string name="bouton_faux">Faux</string>
+    <string name="bouton_suivant">Suivant</string>
+    <string name="bouton_precedent">Précédent</string>
+    <string name="btn_affiche_aide">Afficher réponse</string>
+    <string name="btn_triche">Triche</string>
+
+    <!-- Toasts -->
+    <string name="toast_correct">Correct !</string>
+    <string name="toast_incorrect">Incorrect !</string>
+    <string name="toast_triche">Faut pas tricher !</string>
+
+    <!-- Questions -->
+    <string name="question_paris">Paris est la capitale de la France.</string>
+    <string name="question_ocean">L\'océan Pacifique est plus grand que l\'océan Atlantique.</string>
+    <string name="question_afrique">Le Nil se trouve en Afrique.</string>
+    <string name="question_amerique">Les Amériques sont sur 3 continents.</string>
+    <string name="question_antarctique">L\'Antarctique est inhabité.</string>
+    <string name="txt_attention">Êtes-vous sûr de vouloir faire ça ?</string>
+
+    <!-- AideActivity -->
+    <string name="btn_affiche_aide_vrai">La bonne réponse est : Vrai</string>
+    <string name="btn_affiche_aide_faux">La bonne réponse est : Faux</string>
+
+</resources>
