@@ -28,6 +28,7 @@ class AideActivity : AppCompatActivity() {
             }
             binding.twResponse.setText(txtAfficher)
             setResultReponseAffiche(true)
+            finish()
         }
     }
 
